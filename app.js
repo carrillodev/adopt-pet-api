@@ -22,4 +22,4 @@ async function init() {
   });
 }
 
-init();
+init().catch(_ => null);
