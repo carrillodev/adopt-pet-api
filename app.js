@@ -11,7 +11,7 @@ async function init() {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
 
-  await mongoose.connect(process.env.MONGO_URI);
+  await mongoose.connect(process.env.MONGO_URI).catch(_ => null);
   mongoose.set('debug', true);
 
   app.use('/v1', require('./routes'));
